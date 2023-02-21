@@ -1,3 +1,4 @@
+# This code scrape data for currency rate according to 1USD
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
@@ -17,6 +18,7 @@ rate=[]
     
 for i in conversion_id:
     rate.append(i.text)
+# for finding currency codes
     url_part = i.find('a')
     if (url_part != None):
         url_str = url_part.get('href')
